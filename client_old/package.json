@@ -1,0 +1,33 @@
+{
+  "name": "client",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "tailwind:init": "tailwindcss init -p"
+  },
+  "dependencies": {
+    "@react-three/drei": "^10.5.1",
+    "@react-three/fiber": "^9.2.0",
+    "axios": "^1.10.0",
+    "framer-motion": "^12.23.6",
+    "gsap": "^3.13.0",
+    "maath": "^0.10.8",
+    "next": "15.4.1",
+    "react": "19.1.0",
+    "react-dom": "19.1.0",
+    "three": "^0.178.0"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3",
+    "@tailwindcss/postcss": "^4.1.11",
+    "autoprefixer": "^10.4.21",
+    "eslint": "^9",
+    "eslint-config-next": "15.4.1",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^4.1.11"
+  }
+}
