@@ -28,7 +28,7 @@ export default function SearchPage() {
           Authorization: `Bearer ${user.token}`,
         },
       };
-      const { data } = await axios.post('http://localhost:5000/api/memories/search', { query }, config);
+      const { data } = await axios.post('https://memento-e6sp.onrender.com/api/memories/search', { query }, config);
       setResults(data);
     } catch (error) {
       console.error('Search failed', error);

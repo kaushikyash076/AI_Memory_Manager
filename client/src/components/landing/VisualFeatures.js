@@ -31,7 +31,7 @@ const FeatureRow = ({ title, description, imageUrl, reverse = false }) => {
         );
     }, sectionRef);
     return () => ctx.revert();
-  }, []);
+  }, [reverse]);
 
   return (
     <div ref={sectionRef} className={`flex flex-col md:flex-row items-center gap-12 ${reverse ? 'md:flex-row-reverse' : ''}`}>

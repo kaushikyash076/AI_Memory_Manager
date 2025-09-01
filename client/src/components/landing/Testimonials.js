@@ -67,7 +67,7 @@ const TestimonialCard = ({ quote, name, title, avatar }) => {
     // Embla requires a flex basis for each slide
     <div className="flex-[0_0_90%] md:flex-[0_0_30%] mx-4">
         <div className="bg-background-alt p-8 rounded-2xl shadow-lg border border-border flex flex-col h-full">
-          <p className="font-sans text-text-secondary flex-grow">"{quote}"</p>
+          <p className="font-sans text-text-secondary flex-grow">&quot;{quote}&quot;</p>
           <div className="flex items-center mt-6">
             <Image 
                 src={avatar} 
@@ -118,7 +118,7 @@ export default function Testimonials() {
           From Cluttered Notes to Crystal Clarity
         </h2>
         <p className="max-w-2xl mx-auto text-text-secondary mb-12">
-            Thousands of users have transformed their workflow with their new digital brain. Here's what they have to say.
+            Thousands of users have transformed their workflow with their new digital brain. Here&apos;s what they have to say.
         </p>
       </div>
 

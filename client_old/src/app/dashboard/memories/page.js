@@ -30,7 +30,7 @@ export default function MemoriesPage() {
             Authorization: `Bearer ${user.token}`,
           },
         };
-        const { data } = await axios.get('http://localhost:5000/api/memories', config);
+        const { data } = await axios.get('https://memento-e6sp.onrender.com/api/memories', config);
         setMemories(data.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt))); // Sort newest first
       } catch (err) {
         setError('Failed to fetch memories.');
@@ -57,7 +57,7 @@ const handleCreateMemory = async (e) => {
 
     console.log("1. Sending new memory to backend...");
 
-    const { data } = await axios.post('http://localhost:5000/api/memories', { content: newMemoryContent }, config);
+    const { data } = await axios.post('https://memento-e6sp.onrender.com/api/memories', { content: newMemoryContent }, config);
 
     console.log("2. Received successful response from backend:", data);
     console.log("3. Current memories state (before update):", memories);

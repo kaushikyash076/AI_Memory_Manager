@@ -28,7 +28,7 @@ export default function AuthLayout({ children }) {
                     </svg>
                 </div>
                 <blockquote className="text-lg text-text-primary">
-                    "This tool is like a second brain. The AI-powered search has saved me countless hours trying to find that one specific note from weeks ago."
+                    &quot;This tool is like a second brain. The AI-powered search has saved me countless hours trying to find that one specific note from weeks ago.&quot;
                 </blockquote>
                 <p className="mt-4 text-text-secondary">- Alex Rivera, Lead Developer</p>
             </div>

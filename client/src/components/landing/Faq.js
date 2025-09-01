@@ -116,7 +116,7 @@ export default function Faq() {
             Frequently Asked Questions
           </h2>
           <p className="max-w-2xl mx-auto mt-4 text-text-secondary">
-            Have questions? We've got answers. If you can't find what you're looking for, feel free to contact us.
+            Have questions? We&apos;ve got answers. If you can&apos;t find what you&apos;re looking for, feel free to contact us.
           </p>
         </div>
         <motion.div

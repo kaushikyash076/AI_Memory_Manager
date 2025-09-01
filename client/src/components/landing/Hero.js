@@ -38,7 +38,7 @@ export default function Hero() {
     return () => {
       if (effect) effect.destroy();
     };
-  }, []);
+  }, [vantaEffect]);
 
   // Animate the text content
   useEffect(() => {

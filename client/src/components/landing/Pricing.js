@@ -137,7 +137,7 @@ export default function Pricing() {
       <div className="max-w-6xl mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="font-heading text-4xl font-extrabold text-text-primary">
-            Choose the Plan That's Right for You
+            Choose the Plan That&apos;s Right for You
           </h2>
           <p className="max-w-2xl mx-auto mt-4 text-text-secondary">
             Start for free and scale as you grow. No credit card required.

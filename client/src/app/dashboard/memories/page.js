@@ -31,7 +31,7 @@ export default function MemoriesPage() {
       setError(null);
       try {
         const config = { headers: { Authorization: `Bearer ${user.token}` } };
-        const { data } = await axios.get('http://localhost:5000/api/memories', config);
+        const { data } = await axios.get('https://memento-e6sp.onrender.com/api/memories', config);
         setMemories(data.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt)));
       } catch (err) {
         setError('Failed to fetch memories.');
@@ -47,7 +47,7 @@ export default function MemoriesPage() {
     if (!newMemoryContent.trim()) return;
     try {
       const config = { headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${user.token}` } };
-      await axios.post('http://localhost:5000/api/memories', { content: newMemoryContent }, config);
+      await axios.post('https://memento-e6sp.onrender.com/api/memories', { content: newMemoryContent }, config);
       setNewMemoryContent('');
       setDataVersion(v => v + 1); // Re-fetch memories
     } catch (err) {
@@ -60,7 +60,7 @@ export default function MemoriesPage() {
     if (window.confirm('Are you sure you want to delete this memory? This action cannot be undone.')) {
         try {
             const config = { headers: { Authorization: `Bearer ${user.token}` } };
-            await axios.delete(`http://localhost:5000/api/memories/${id}`, config);
+            await axios.delete(`https://memento-e6sp.onrender.com/api/memories/${id}`, config);
             setDataVersion(v => v + 1); // Re-fetch memories
         } catch (err) {
             alert('Failed to delete memory.');
@@ -76,7 +76,7 @@ export default function MemoriesPage() {
   const handleUpdateMemory = async (id, content) => {
     try {
         const config = { headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${user.token}` } };
-        await axios.put(`http://localhost:5000/api/memories/${id}`, { content }, config);
+        await axios.put(`https://memento-e6sp.onrender.com/api/memories/${id}`, { content }, config);
         setIsModalOpen(false);
         setDataVersion(v => v + 1); // Re-fetch memories
     } catch (err) {

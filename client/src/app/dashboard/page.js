@@ -39,7 +39,7 @@ export default function DashboardPage() {
         if (user?.token) {
             try {
                 const config = { headers: { Authorization: `Bearer ${user.token}` } };
-                const memoriesResponse = await axios.get('http://localhost:5000/api/memories', config);
+                const memoriesResponse = await axios.get('https://memento-e6sp.onrender.com/api/memories', config);
                 const fetchedMemories = memoriesResponse.data;
                 setAllMemories(fetchedMemories);
                 

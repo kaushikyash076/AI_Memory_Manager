@@ -15,7 +15,7 @@ export default function RegisterPage() {
     e.preventDefault();
     try {
       const response = await axios.post(
-        'http://localhost:5000/api/users/register',
+        'https://memento-e6sp.onrender.com/api/users/register',
         { name, email, password }
       );
       console.log('Registration successful:', response.data);

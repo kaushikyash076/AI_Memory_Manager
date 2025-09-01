@@ -146,7 +146,7 @@ export default function Features() {
         <div className="text-center mb-16">
             <h2 className="font-heading text-4xl font-extrabold text-text-primary">AI Memory, reimagined</h2>
             <p className="max-w-2xl mx-auto mt-4 text-text-secondary">
-                We understand the challenge of retaining information. That's why we built a tool that streamlines your workflow, eliminates friction, and empowers you to focus on what you do best: thinking.
+                We understand the challenge of retaining information. That&apos;s why we built a tool that streamlines your workflow, eliminates friction, and empowers you to focus on what you do best: thinking.
             </p>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
