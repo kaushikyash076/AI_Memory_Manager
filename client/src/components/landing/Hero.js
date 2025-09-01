@@ -3,42 +3,18 @@
 import { useRef, useEffect, useState } from 'react';
 import gsap from 'gsap';
 import Link from 'next/link';
-import NET from 'vanta/dist/vanta.net.min';
-// We will import mojs dynamically inside useEffect
+import dynamic from 'next/dynamic';
+
+// This is the key: we are dynamically importing our VantaBackground,
+// and telling Next.js to NEVER render it on the server (ssr: false).
+const VantaBackground = dynamic(() => import('./VantaBackground'), {
+  ssr: false,
+});
 
 export default function Hero() {
   const heroContentRef = useRef(null);
-  const vantaRef = useRef(null);
-  const [vantaEffect, setVantaEffect] = useState(null);
   const buttonRef = useRef(null);
-  const animationRef = useRef(null); // Ref to store the mo.js animation
-
-  // Initialize Vanta.js
-  useEffect(() => {
-    let effect = vantaEffect;
-    if (!effect && vantaRef.current && window.THREE) {
-      effect = NET({
-        el: vantaRef.current,
-        THREE: window.THREE,
-        mouseControls: true,
-        touchControls: true,
-        gyroControls: false,
-        minHeight: 200.0,
-        minWidth: 200.0,
-        scale: 1.0,
-        scaleMobile: 1.0,
-        color: '#3B82F6',
-        backgroundColor: '#1A1A1A',
-        points: 12.0,
-        maxDistance: 22.0,
-        spacing: 16.0,
-      });
-      setVantaEffect(effect);
-    }
-    return () => {
-      if (effect) effect.destroy();
-    };
-  }, [vantaEffect]);
+  const animationRef = useRef(null);
 
   // Animate the text content
   useEffect(() => {
@@ -52,7 +28,7 @@ export default function Hero() {
     return () => ctx.revert();
   }, []);
 
-  // FIXED: Initialize mo.js animation on the client-side using dynamic import
+  // Initialize mo.js animation
   useEffect(() => {
     const initMojs = async () => {
         const mojs = (await import('@mojs/core')).default;
@@ -74,7 +50,6 @@ export default function Hero() {
     initMojs();
   }, []);
 
-  // mo.js click handler
   const handleButtonClick = () => {
     if (animationRef.current) {
       animationRef.current.replay();
@@ -83,10 +58,7 @@ export default function Hero() {
 
   return (
     <div className="relative w-full h-screen mx-auto">
-      <div 
-        ref={vantaRef} 
-        className="absolute inset-0 z-0" 
-      />
+      <VantaBackground />
       <div
         ref={heroContentRef}
         className="relative z-10 flex flex-col justify-center items-start text-left px-8 md:px-16 lg:px-24 h-full max-w-7xl mx-auto"
