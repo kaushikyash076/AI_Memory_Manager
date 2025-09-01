@@ -29,7 +29,7 @@ app.use((req, res, next) => {
 
 // --- Explicit CORS Configuration ---
 const corsOptions = {
-  origin: 'https://memento-e6sp.onrender.com',
+  origin: 'https://memento-rouge.vercel.app',
   methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
   allowedHeaders: 'Content-Type,Authorization',
 };
