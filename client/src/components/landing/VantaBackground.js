@@ -20,8 +20,8 @@ export default function VantaBackground() {
         minWidth: 200.0,
         scale: 1.0,
         scaleMobile: 1.0,
-        color: '#3B82F6',
-        backgroundColor: '#1A1A1A',
+        color: '#3B82F6', // THIS IS THE NEW BLUE COLOR FOR THE LINES
+        backgroundColor: '#1A1A1A', // Our charcoal background
         points: 12.0,
         maxDistance: 22.0,
         spacing: 16.0,
@@ -35,3 +35,4 @@ export default function VantaBackground() {
 
   return <div ref={vantaRef} className="absolute inset-0 z-0" />;
 }
+
